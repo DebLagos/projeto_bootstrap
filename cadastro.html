@@ -16,67 +16,100 @@
 </head>
 
 <body>
-
     <main class="container d-flex flex-column justify-content-center align-items-center">
-
-        <div class="d-flex justify-content-center">
-            <img class="w-25 mt-4 mb-4" src="imagens/logo-tipograh.png" alt="">
-        </div>
-
         <div class="card w-50 p-4 border-0">
             <div class="card-body text-center">
                 <form action="">
-                    <h4 class="text-start mb-4">Cadastre-se</h4>
-                    <p class="text-start small"> </p>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="" id="" placeholder="Digite seu nome">
+                    <h1 class="text-center mb-5">Cadastre-se</h1>
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                            data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="name">Nome Completo</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">É necessario um nome.</div>
                     </div>
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="" id="" placeholder="Digite seu sobrenome">
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                            data-sb-validations="required,email" data-sb-can-submit="no">
+                        <label for="email">Email</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">É necessario um Email.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Esse Email não é valido.</div>
                     </div>
-
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="email" name="" id="" placeholder="Digite seu e-mail">
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                            data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="phone">Numero de telefone</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">Telefone obrigatorio.
+                        </div>
                     </div>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="" id="" placeholder="Digite seu telefone">
+                    <!-- input date -->
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" id="floatingInput">
+                        <label for="floatingInput">Data de nascimento</label>
+                      </div>
+                    <!-- input genrero -->
+                    <div class=" mb-5">
+                        <p class="text-start" style="font-family: sans-serif; font-weight: bold;">Selecione seu Genêro:</p>
+                        <div class="form-check form-check text-start">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Masculino</label>
+                        </div>
+                        <div class="form-check form-check text-start">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Feminino</label>
+                        </div>
+                        <div class="form-check form-check text-start">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">Outro</label>
+                        </div>
+                        <div class="form-check form-check text-start">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                            <label class="form-check-label" for="inlineRadio4">Prefiro não irformar</label>
+                        </div>
+                    </div>  
+                    <!-- Endereço input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="endereco" type="text" placeholder="Rua ...., n 0"
+                            data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="endereco">Endereço</label>
+                        <div class="invalid-feedback">Por favor, insira seu Endereço.</div>
                     </div>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="date" name="" id=""
-                            placeholder="Digite sua data de nascimento">
+                    <!-- input cidade -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="cidade" type="text" placeholder=" "
+                            data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="cidade">Cidade</label>
+                        <div class="invalid-feedback">Por favor, insira sua Cidade.</div>
                     </div>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="" id="" placeholder="Digite sua endereço">
-                    </div>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="" id="" placeholder="Digite sua cidade">
-                    </div>
-
-
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group mb-4">
-                                <input class="form-control" type="text" name="" id="" placeholder="Digite seu estado">
-                            </div>
+                        <!-- input estado -->
+                        <div class="form-floating mb-3 col-12 col-md-6">
+                            <input class="form-control" id="estado" type="text" placeholder=" "
+                            data-sb-validations="required" data-sb-can-submit="no">
+                            <label for="estado">Estado</label>
+                            <div class="invalid-feedback">É necessario um estado</div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group mb-4">
-                                <input class="form-control" type="text" name="" id="" placeholder="Digite seu CEP">
-                            </div>
+                        <!-- input CEP -->
+                        <div class="form-floating mb-3 col-12 col-md-6">
+                            <input class="form-control" id="cep" type="text" placeholder=" "
+                            data-sb-validations="required" data-sb-can-submit="no">
+                            <label for="cep">CEP</label>
+                            <div class="invalid-feedback">É necessario um CEP</div>
                         </div>
                     </div>
-
-                    <div class="form-group mb-4">
-                        <input class="form-control" type="password" name="" id=""
-                            placeholder="Digite sua primeira senha">
+                    <!-- input password --> 
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Senha</label>
                     </div>
-                    <div class="form-group mb-4 text-start">
+                    <!-- input confirm password -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Confirmar senha</label>
+                    </div>
+                    <div class="form-group mb-5 text-start">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="tipo_login" id="tipo_login_medico"
                                 value="option1">
@@ -85,27 +118,20 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="form-group mb-4">
                         <a href="login.html" class="btn btn-outline-primary w-50">Cadastre-se</a>
                     </div>
-
                     <div class="form-group">
-                        <a href="login.html" class="small text-decoration-none">Já tem uma conta?</a>
+                        <a href="login.html" class="small text-decoration-none">Já tem uma conta? Clique aqui</a>
                     </div>
                 </form>
             </div>
         </div>
-
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-
-
+        crossorigin="anonymous">
+    </script>
 </body>
-
-
-
 </html>

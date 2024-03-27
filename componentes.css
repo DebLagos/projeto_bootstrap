@@ -1,3 +1,40 @@
+/* 
+
+CORES DO PROJETO
+
+*/
+
+a {
+    color: #A47BBE;
+}
+
+a:hover {
+    color: #7c4d99;
+}
+
+.form-check-input:checked {
+    background-color: #A47BBE;
+    border-color: #A47BBE;
+}
+
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #A47BBE;
+    --bs-btn-border-color: #A47BBE;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #7c4d99;
+    --bs-btn-hover-border-color: #7c4d99;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #7c4d99;
+    --bs-btn-active-border-color: #7c4d99;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #A47BBE;
+    --bs-btn-disabled-border-color: #A47BBE;
+}
+
 .imagem {
     max-width: 400px;
 }
@@ -71,7 +108,7 @@ body {
     margin-right: auto;
 }
 
-.container-cadastro{
+.container-cadastro {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 40%;
