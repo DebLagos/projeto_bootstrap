@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="componentes.css">
+
+    <link rel="stylesheet" href="icon/icofont.min.css">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main class="container d-flex flex-column justify-content-center align-items-center h-100">
+        <div class="card w-40 p-4 border-0 position-absolute top-50 start-50 translate-middle">
+            <div class="card-body text-center">
+                <form action="">
+                    <a href="index.html" class="d-flex justify-content-center">
+                        <img class="w-25 mt-4 mb-5" src="imagens/logo-tipograh.png" alt="Logo Medvida">
+                    </a>
+                    <div class="form-group mb-4 d-flex justify-content-evenly">
+
+                        <a href="login_medico.html" class="form-check form-check-inline text-decoration-none text-dark">
+                            <input class="form-check-input" type="radio" name="tipo_login" id="tipo_login_medico"
+                                value="option1">
+                            <span class="form-check-label text-dark" for="tipo_login_medico">
+                                Médico
+                            </span>
+                        </a>
+
+
+                        <div href="login.html" class="form-check form-check-inline text-decoration-none text-dark">
+                            <input class="form-check-input" type="radio" name="tipo_login" id="tipo_login_paciente"
+                                value="option1" checked>
+                            <span class="form-check-label" for="tipo_login_paciente">
+                                Paciente
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                            data-sb-validations="required,email" data-sb-can-submit="no" required
+                            onblur="validarEmailInput()">
+                        <label for=" email">Email</label>
+                        <div id="email-error" style="color: red;"></div>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">É necessario um Email.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Esse Email não é valido.</div>
+                    </div>
+                    <!-- input password -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                            required onblur="validarSenhaInput() ">
+                        <label for="floatingPassword">Senha</label>
+                        <div id="senha-error" style="color: red;"></div>
+                    </div>
+                    <div class="form-group mb-4 text-end">
+                        <a href="esqueci-senha.html " class="small text-decoration-none">Esqueceu a
+                            senha?</a>
+                    </div>
+                    <div class="form-group mb-4">
+                        <button type="button" class="btn btn-outline-primary w-50"
+                            onclick="validarLoginPaciente()">Entrar</button>
+
+                    </div>
+                    <div class="form-group">
+                        <a href="cadastro.html" class="small text-decoration-none">Cadastre-se</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+
+
+    <script>
+        function validarLoginPaciente() {
+
+            // verifica o e-mail
+            // validarEmailInput();
+            if (validarEmailInput() == false) {
+
+                return;
+            }
+
+            // verifica a senha
+            // Se for igual a false, significa que não está valido o input
+            if (validarSenhaInput() == false) {
+                // Ao usar o return dessa forma, para a execução da função;
+                // assim ela não vai continuar para as linhas abaixo.......
+
+                return;
+            }
+
+            window.location.assign("file:///C:/Users/debja/Downloads/projeto_bootstrap-med/meus_agendamentos.html");
+
+        }
+        validarLoginPaciente();
+    </script>
+
+    <script src="validar-campos.js"></script>
+</body>
+
+</html>

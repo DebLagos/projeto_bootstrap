@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="componentes.css">
+
+    <link rel="stylesheet" href="icon/icofont.min.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <script src="mascara-input.js"></script>
+</head>
+
+<body>
+    <header class="bg-white">
+        <div class="container-lg">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center" href="index.html">
+                        <img class="logo logo-header d-none d-md-inline-flex" src="imagens/logo-med.png" alt="">
+                        <img class="logo logo-header-texto" src="imagens/logo-tipograh.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="consultas.html">Consultas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="exames.html">Exames</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sobre-nos.html">Sobre Nós</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <button class="btn btn-outline-primary " type="submit">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <main class="container-lg">
+        <h2 class="fw-bolder my-5">Pagamento</h2>
+        <h3 class="fw-bolder">Dermatologista</h3>
+        <p>O especialista por essa área médica faz o diagnóstico e o tratamento das mais diversas doenças
+            relacionadas à nossa pele.</p>
+        <div class="formulario-pagamento bg-light rounded-4 py-5 px-md-5 my-5">
+            <form>
+                <h4 class="fw-bolder">Forma de Pagamento</h4>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cartão de Débito
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Cartão de Crédito
+                    </label>
+                </div>
+                <br>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" aria-label="nome" required>
+                    </div>
+                    <div class="col">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" aria-label="sobrenome" required>
+                    </div>
+                </div>
+                <br>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="numero-cartao">Número do Cartão</label>
+                        <input type="text" class="form-control" aria-label="numero-cartao"
+                            placeholder="**** **** **** ****" maxlength="19" required
+                            onkeyup="mascara('#### #### #### ####',this,event,true)">
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label for="codigo-seguranca">Código de Segurança</label>
+                            <input type="password" class="form-control" aria-label="codigo-seguranca" placeholder="CVC"
+                                maxlength="3" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="vencimento">Vencimento</label>
+                        <input style="width: 48%;" type="text" class="form-control" aria-label="vencimento"
+                            maxlength="5" placeholder="mm/yy" required onkeyup="mascara('##/##',this,event,true)">
+                    </div>
+                </div>
+                <br>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="preço">Preço</label>
+                        <input class="form-control" type="text" placeholder="R$199.90"
+                            aria-label="Disabled input example" disabled>
+                    </div>
+                    <div class="col">
+                        <label for="parcela">Parcela</label>
+                        <select class="form-select">
+                            <option selected value="1">1x sem juros</option>
+                            <option value="2">2x sem juros</option>
+                            <option value="3">3x sem juros</option>
+                            <option value="4">4x sem juros</option>
+                            <option value="5">5x sem juros</option>
+                            <option value="6">6x com juros</option>
+                            <option value="7">7x com juros</option>
+                            <option value="8">8x com juros</option>
+                            <option value="9">9x com juros</option>
+                            <option value="10">10x com juros</option>
+                            <option value="11">11x com juros</option>
+                            <option value="12">12x com juros</option>
+                        </select>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center; margin: 0 auto;">
+                    <a href="meus_agendamentos.html" class="btn btn-outline-primary" type="submit">Realizar
+                        Pagamento</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-white">
+
+        <div class="container-lg">
+
+            <div class="row">
+                <div class="col my-4 ">
+                    <img class="logo logo-header-texto mb-3" src="imagens/logo-tipograh.png" alt="">
+                    <p>
+                        Cuidando de você hoje e sempre!<br>
+                        Siga a gente:
+                    </p>
+                    <div class="fs-4">
+                        <a class="text-gradient" href="#!"><i class="bi bi-whatsapp"></i></a>
+                        <a class="text-gradient" href="#!"><i class="bi bi-instagram"></i></a>
+                        <a class="text-gradient" href="#!"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col row my-5">
+                    <div>
+                        <p>
+                            Site seguro
+                            <i class="icofont-lock"></i>
+                        </p>
+
+                        <p>
+                            Formas de pagamento
+
+                        </p>
+                        <div>
+                            <i class="icofont-mastercard fs-1"></i>
+                            <i class="icofont-visa-alt fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <style>
+
+    </style>
+</body>
+
+</html>
+</body>
