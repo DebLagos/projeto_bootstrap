@@ -21,7 +21,7 @@
         <div class="card w-50 p-4 border-0 mt-5">
             <div class="card-body text-center">
                 <form onsubmit="return false;">
-                    <a href="index.html" class="d-flex justify-content-center">
+                    <a href="login.html" class="d-flex justify-content-center">
                         <img class="w-25 mt-4 mb-5" src="imagens/logo-tipograh.png" alt="Logo Medvida">
                     </a>
                     <h3 class="text-center mb-5">Cadastre-se</h3>
@@ -87,15 +87,19 @@
                     </div>
                     <div class="row">
                         <!-- input estado -->
-                        <div class="form-floating mb-3 col-12 col-md-6">
-                            <input class="form-control" id="estado" type="text" placeholder=" ">
-                            <label for="estado">Estado</label>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3 ">
+                                <input class="form-control" id="estado" type="text" placeholder=" ">
+                                <label for="estado">Estado</label>
+                            </div>
                         </div>
                         <!-- input CEP -->
-                        <div class="form-floating mb-3 col-12 col-md-6">
-                            <input class="form-control" id="cep" type="text" placeholder=" "
-                                onkeyup="mascara('####-###',this,event)" maxlength="8">
-                            <label for="cep">CEP</label>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3 ">
+                                <input class="form-control" id="cep" type="text" placeholder=" "
+                                    onkeyup="mascara('####-###',this,event)" maxlength="8">
+                                <label for="cep">CEP</label>
+                            </div>
                         </div>
                     </div>
                     <!-- input password -->
@@ -237,7 +241,7 @@
 
         function validarCadastro() {
             if (validarFormulario()) {
-                window.location.assign("file:///C:/Users/debja/Downloads/projeto_bootstrap-med/login.html");
+                window.location.assign("file:///C:/Users/debja/OneDrive/Documentos/projeto_bootstrap-med/login.html");
             }
         }
     </script>

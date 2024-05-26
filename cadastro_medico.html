@@ -21,7 +21,7 @@
         <div class="card w-50 p-4 border-0 mt-5">
             <div class="card-body text-center">
                 <form action="">
-                    <a href="index.html" class="d-flex justify-content-center">
+                    <a href="login.html" class="d-flex justify-content-center">
                         <img class="w-25 mt-4 mb-5" src="imagens/logo-tipograh.png" alt="Logo Medvida">
                     </a>
                     <h3 class="text-center mb-5">Cadastrar Médico</h3>
@@ -29,7 +29,7 @@
                     <div class="form-floating mb-3">
                         <input class="form-control" id="name" type="text" placeholder="Enter your name..."
                             data-sb-validations="required" data-sb-can-submit="no" onblur="validarNomeInput()">
-                        <label for="name">Nome Completo</label>
+                        <label for="name">Nome Completo*</label>
                         <div id="nome-error" style="color: red;"></div>
                         <div class="invalid-feedback" data-sb-feedback="name:required">É necessario um nome.</div>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="form-floating mb-3">
                         <input class="form-control" id="email" type="email" placeholder="name@example.com"
                             data-sb-validations="required,email" data-sb-can-submit="no" onblur="validarEmailInput() ">
-                        <label for="email">Email</label>
+                        <label for="email">Email*</label>
                         <div id="email-error" style="color: red;"></div>
                         <div class="invalid-feedback" data-sb-feedback="email:required">É necessario um Email.</div>
                         <div class="invalid-feedback" data-sb-feedback="email:email">Esse Email não é valido.</div>
