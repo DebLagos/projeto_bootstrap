@@ -1,38 +1,30 @@
-
-//vetor do medico
+// Vetor do médico
 var cadastroMedico = [
+    { id: new Date().getTime(), nome: 'Roberto Ribeiro', email: 'exemplo@gmail.com', telefone: '(18)98122-3454', crm: '1234567890', especialidade: 'Pediatra' }
+];
 
-    { nome: 'Roberto Ribeiro', email: 'exemplo@gmail.com', telefone: '(18)98122-3454', crm: '1234567890', especialidade: 'Pediatra' }
-
-]
-
+// Função para carregar os dados na tabela
 function carregaDadosTabela(dados) {
-    // vincular a tabela com o tab
     let tab = document.getElementById('tabela');
+    let htmlCorpo = '';
 
-    // criar a linha com o cabecalho
-    let htmlCorpo = `<tr>
-                            <th>Nome Completo</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
-                            <th>CRM</th>
-                            <th>Especialidade</th>
-                        </tr>`;
-
-    for (let medico of dados) {
+    for (let i = 0; i < dados.length; i++) {
+        let medico = dados[i];
         htmlCorpo += `<tr>
+                        <td><input type="checkbox" class="selecionar" data-id="${medico.id}"></td>
                         <td>${medico.nome}</td>
                         <td>${medico.email}</td>
                         <td>${medico.telefone}</td>
                         <td>${medico.crm}</td>
                         <td>${medico.especialidade}</td>
-                        
+                        <td><button class="btn btn-outline-primary" onclick="excluirMedico(${medico.id})">Excluir</button></td>
                       </tr>`;
     }
 
     tab.innerHTML = htmlCorpo;
 }
 
+// Função para cadastrar um novo médico
 function cadastrar() {
     let vNome = document.querySelector('#name').value;
     let vEmail = document.querySelector('#email').value;
@@ -40,26 +32,43 @@ function cadastrar() {
     let vCrm = document.querySelector('#crm').value;
     let vEspecialidade = document.querySelector('#specialty').value;
 
-    if (vNome == "" || vEmail == "" || vTelefone == "" || vCrm == "" || vEspecialidade == "") {
-
-        return
+    if (vNome === "" || vEmail === "" || vTelefone === "" || vCrm === "" || vEspecialidade === "") {
+        return;
     }
 
-    // atualizar o vetor de objetos alunos
-    cadastroMedico.push({ nome: vNome, email: vEmail, phone: vTelefone, crm: vCrm, specialty: vEspecialidade });
+    let novoMedico = { id: new Date().getTime(), nome: vNome, email: vEmail, telefone: vTelefone, crm: vCrm, especialidade: vEspecialidade };
 
-    let htmlLinha = `<tr>
-                        <td>${vNome}</td>
-                        <td>${vEmail}</td>
-                        <td>${vTelefone}</td>
-                        <td>${vCrm}</td>
-                        <td>${vEspecialidade}</td>
-                        
-                      </tr>`;
+    // Atualizar o vetor de objetos médicos
+    cadastroMedico.push(novoMedico);
 
-    // vincular a tabela com o tab
-    let tab = document.getElementById('tabela');
-    tab.innerHTML += htmlLinha;
+    // Recarregar a tabela
+    carregaDadosTabela(cadastroMedico);
+
+    // Limpar o formulário
+    document.getElementById('form-cadastro').reset();
 }
 
+// Função para excluir um médico
+function excluirMedico(idExcluir) {
+    cadastroMedico = cadastroMedico.filter(medico => medico.id !== idExcluir);
+
+    // Recarregar a tabela
+    carregaDadosTabela(cadastroMedico);
+}
+
+// Função para selecionar todos os médicos
+function selecionarTodos(source) {
+    let checkboxes = document.querySelectorAll('.selecionar');
+    checkboxes.forEach(checkbox => checkbox.checked = source.checked);
+}
+
+// Função para excluir todos os médicos
+function excluirTodos() {
+    cadastroMedico = [];
+
+    // Recarregar a tabela
+    carregaDadosTabela(cadastroMedico);
+}
+
+// Carregar os dados da tabela ao carregar a página
 carregaDadosTabela(cadastroMedico);

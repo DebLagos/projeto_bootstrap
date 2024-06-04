@@ -124,3 +124,10 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+.tabela-arredondada {
+    border-radius: 15px;
+    /* Ajusta o valor para a quantidade de arredondamento desejada */
+    overflow: hidden;
+    /* Isso garante que as bordas arredondadas funcionem corretamente */
+}
