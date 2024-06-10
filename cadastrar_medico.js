@@ -3,7 +3,6 @@ var cadastroMedico = [
     { id: new Date().getTime(), nome: 'Roberto Ribeiro', email: 'exemplo@gmail.com', telefone: '(18)98122-3454', crm: '1234567890', especialidade: 'Pediatra' }
 ];
 
-// Função para carregar os dados na tabela
 function carregaDadosTabela(dados) {
     let tab = document.getElementById('tabela');
     let htmlCorpo = '';
@@ -21,9 +20,19 @@ function carregaDadosTabela(dados) {
                       </tr>`;
     }
 
-    tab.innerHTML = htmlCorpo;
+    tab.innerHTML = `
+        <tr>
+            <th><input type="checkbox" id="checkAll" onclick="selecionarTodos()"></th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>CRM</th>
+            <th>Especialidade</th>
+            <th></th>
+        </tr>
+        ${htmlCorpo}
+    `;
 }
-
 // Função para cadastrar um novo médico
 function cadastrar() {
     let vNome = document.querySelector('#name').value;
@@ -57,11 +66,12 @@ function excluirMedico(idExcluir) {
 }
 
 // Função para selecionar todos os médicos
-function selecionarTodos(source) {
+function selecionarTodos() {
     let checkboxes = document.querySelectorAll('.selecionar');
-    checkboxes.forEach(checkbox => checkbox.checked = source.checked);
-}
+    let checkAll = document.getElementById('checkAll');
 
+    checkboxes.forEach(checkbox => checkbox.checked = checkAll.checked);
+}
 // Função para excluir todos os médicos
 function excluirTodos() {
     cadastroMedico = [];

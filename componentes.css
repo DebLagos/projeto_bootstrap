@@ -131,3 +131,8 @@ body {
     overflow: hidden;
     /* Isso garante que as bordas arredondadas funcionem corretamente */
 }
+
+.custom-width {
+    width: 100px;
+    /* ou qualquer valor que você desejar */
+}

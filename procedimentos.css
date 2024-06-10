@@ -1,0 +1,50 @@
+.h1-modal {
+    font-size: 17px;
+}
+
+p {
+    font-size: 12px;
+}
+
+.subtitulo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.titulo {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.dialog-topo {
+    display: flex;
+    justify-content: right;
+
+}
+
+.width-60 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.fechamento {
+    border: none;
+    background-color: #ffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fechamento:hover {
+    background-color: #ffffff;
+    color: #A47BBE;
+}
+
+.texto-modal {
+    font-size: 15px;
+    font-weight: 300;
+}

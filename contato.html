@@ -8,11 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="componentes.css">
-
     <link rel="stylesheet" href="icon/icofont.min.css">
-
-
+    <link rel="stylesheet" href="contatos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -48,106 +49,64 @@
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
-                            <a class="btn btn-outline-primary" href="login.html">Entrar</a>
+                            <button class="btn btn-outline-primary custom-width" type="button"
+                                onclick="location.href='login.html'">Entrar</button>
                         </form>
                     </div>
                 </div>
             </nav>
         </div>
-
     </header>
 
     <div>
         <img class="img-fluid alturaImagem" src="imagens/contato-medvida.jpg" alt="...">
     </div>
     <main class="container-lg">
-
-        <!-- 
-            EDITE APENAS DENTRO DA TAG MAIN QUE É O CONTEUDO DA PÁGINA
-         -->
+        <!-- EDITE APENAS DENTRO DA TAG MAIN QUE É O CONTEUDO DA PÁGINA -->
         <h3 class="fw-bolder my-5">Fale Conosco</h3>
         <div class="bg-light rounded-4 py-5 px-4 px-md-5 my-5">
             <div class="text-justify mb-5 ">
-
                 <h4 class="fw-bolder mx-5">Solicitar informações</h4>
-
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Name input-->
+                    <form id="form-contato">
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                data-sb-validations="required" data-sb-can-submit="no">
+                            <input class="form-control" id="name" type="text" data-sb-validations="required"
+                                placeholder="Nome Completo" onblur="validarNomeInput()">
                             <label for="name">Nome Completo</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">É necessario um Nome.</div>
+                            <div id="nome-error" class="error-message"></div>
                         </div>
-                        <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                data-sb-validations="required,email" data-sb-can-submit="no">
-                            <label for="email">Endereço de e-mail</label>
+                                data-sb-validations="required,email" onblur="validarEmailInput()">
+                            <label for="email">Endereço de e-mail*</label>
+                            <div id="email-error" class="error-message"></div>
                             <div class="invalid-feedback" data-sb-feedback="email:required">É necessario um Email.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Esse Email não é valido.</div>
                         </div>
-                        <!-- Phone number input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                data-sb-validations="required" data-sb-can-submit="no">
+                                onkeyup="mascara('(##)#####-####',this,event)">
                             <label for="phone">Numero de telefone</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Telefone obrigatorio.
-                            </div>
                         </div>
-                        <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text"
-                                placeholder="Enter your message here..." style="height: 10rem"
-                                data-sb-validations="required" data-sb-can-submit="no"></textarea>
+                            <textarea class="form-control" id="message" placeholder="Digite sua dúvida aqui"
+                                style="height: 10rem" onblur="validarMensagemInput()"></textarea>
                             <label for="message">Mensagem</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Mensagem obrigatoria
-                            </div>
+                            <div id="mensagem-error" class="error-message"></div>
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Mensagem enviada com sucesso</div>
-
-                                <br>
-                                <a
-                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
+                        <div class="conteudo-enviar">
+                            <button class="btn btn-outline-primary" id="enviar" type="submit">Enviar</button>
                         </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Erro no envio da mensagem!</div>
-                        </div>
-                        <!-- Submit Button-->
-                        <button class="btn btn-outline-primary" type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
         </div>
-
     </main>
 
-
     <footer class="bg-white">
-
         <div class="container-lg">
-
             <div class="row">
                 <div class="col my-4 ">
                     <img class="logo logo-header-texto mb-3" src="imagens/logo-tipograh.png" alt="">
@@ -161,20 +120,11 @@
                         <a class="text-gradient" href="#!"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <div class="col">
-
-                </div>
+                <div class="col"></div>
                 <div class="col row my-5">
                     <div>
-                        <p>
-                            Site seguro
-                            <i class="icofont-lock"></i>
-                        </p>
-
-                        <p>
-                            Formas de pagamento
-
-                        </p>
+                        <p>Site seguro<i class="icofont-lock"></i></p>
+                        <p>Formas de pagamento</p>
                         <div>
                             <i class="icofont-mastercard fs-1"></i>
                             <i class="icofont-visa-alt fs-1"></i>
@@ -182,18 +132,72 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-
     </footer>
+
+    <div class="modal fade" id="modal_enviar" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpcZaw5yw5jJbfPzynyJ3SvprAZBB5vROhZqOY1E9ebf_6XAxu6K3FDSw9oSA26-oRSGo&usqp=CAU"
+                        alt="" class="imagem-sucesso">
+                    <p>Dados enviados com sucesso!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    <script src="modal.js"></script>
+    <script src="validar-campos.js"></script>
+    <script>
+        // Função para validar se existem mensagens de erro
+        function validarFormulario() {
+            // Chama as funções de validação existentes
+            validarNomeInput();
+            validarEmailInput();
+            validarMensagemInput();
 
+            // Verifica se há mensagens de erro nos campos de nome, email e mensagem
+            const nomeError = document.getElementById('nome-error').innerText.trim();
+            const emailError = document.getElementById('email-error').innerText.trim();
+            const mensagemError = document.getElementById('mensagem-error').innerText.trim();
 
+            // Retorna true se não houver erros, false caso contrário
+            return nomeError === "" && emailError === "" && mensagemError === "";
+        }
+
+        // Função para validar o campo de mensagem
+        function validarMensagemInput() {
+            const mensagem = document.getElementById('message').value.trim();
+            const mensagemError = document.getElementById('mensagem-error');
+
+            if (mensagem === "") {
+                mensagemError.innerText = "A mensagem é obrigatória.";
+            } else {
+                mensagemError.innerText = "";
+            }
+        }
+
+        // Adiciona um ouvinte de evento ao formulário para capturar a tentativa de envio
+        document.getElementById('form-contato').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio do formulário imediatamente
+
+            // Se não houver erros, mostra o modal de sucesso
+            if (validarFormulario()) {
+                var myModal = new bootstrap.Modal(document.getElementById('modal_enviar'));
+                myModal.show();
+            } else {
+                // Se houver erros, não exibe o modal e pode exibir um alerta opcional
+                console.log("Erro na validação dos campos Nome, Email e Mensagem.");
+            }
+        });
+    </script>
 </body>
 
 </html>

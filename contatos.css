@@ -1,0 +1,28 @@
+.modal-content {
+    border: none;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.imagem-sucesso {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+}

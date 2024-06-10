@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Agendamentos</title>
+    <title>Agendamento dos Pacientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="componentes.css">
-
+    <link rel="stylesheet" href="meus-agendamentos.css">
     <link rel="stylesheet" href="icon/icofont.min.css">
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 
@@ -49,7 +47,8 @@
                         </ul>
 
                         <form class="d-flex" role="search">
-                            <a href="index.html" class="btn btn-outline-primary" type="submit">Sair</a>
+                            <button class="btn btn-outline-primary custom-width" type="button"
+                                onclick="location.href='index.html'">Sair</button>
                         </form>
 
                     </div>
@@ -60,7 +59,7 @@
     </header>
 
     <div>
-        <img class="img-fluid alturaImagem" src="imagens/agendamento.jpg" alt="...">
+        <img class="img-fluid alturaImagem" src="imagens/agenda-pac.jpg" alt="...">
     </div>
     <main class="container-lg px-5">
 
@@ -68,7 +67,7 @@
             EDITE APENAS DENTRO DA TAG MAIN QUE É O CONTEUDO DA PÁGINA
          -->
 
-        <h3 class="fw-bolder my-3">Meus Agendamentos</h3>
+        <h3 class="fw-bolder my-3">Agendamento dos Pacientes</h3>
 
 
         <div class="row">
@@ -82,91 +81,28 @@
 
         <div class="row d-none d-md-flex">
             <div class="col fw-bold my-2 ps-4">
-                Serviços
+                Paciente
             </div>
             <div class="col fw-bold my-2">
                 Data do Agendamento
             </div>
-            <div class="col-6">
+            <div class="col-6"></div>
+        </div>
 
-            </div>
-
-        </div>
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        Eletrocardiograma
-                    </div>
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        10/12/2023 09:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card my-3 rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        Cardiologista
-                    </div>
-                    <div class="col-12 col-md-3  d-flex align-items-center ps-3">
-                        15/12/2023 15:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card my-3 rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        Dermatologista
-                    </div>
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        07/01/2024 08:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
+        <div id="appointments-container">
+            <!-- Os agendamentos serão inseridos aqui dinamicamente -->
         </div>
 
         <div class="row">
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
             <div class="col-8 my-4">
-                <button class="btn btn-outline-primary col-6" type="submit">Veja mais</button>
+                <button class="btn btn-outline-primary col-6" type="button" id="load-more">Veja mais</button>
             </div>
-
         </div>
-
-
-
-
     </main>
 
-
     <footer class="bg-white">
-
         <div class="container-lg">
-
             <div class="row">
                 <div class="col my-4 ">
                     <img class="logo logo-header-texto mb-3" src="imagens/logo-tipograh.png" alt="">
@@ -180,9 +116,7 @@
                         <a class="text-gradient" href="#!"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <div class="col">
-
-                </div>
+                <div class="col"></div>
                 <div class="col row my-5">
                     <div>
                         <p>
@@ -203,18 +137,111 @@
             </div>
 
         </div>
-
-
-
     </footer>
 
+    <dialog id="modal_ver_detalhe">
+        <div class="fechar-modal">
+            <button type="button" class="fechamento js-fechar"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="texto-principal">
+            <span>Paciente: <span id="detalhe-paciente"></span></span>
+            <br>
+            <span>Data: <span id="detalhe-data"></span></span>
+            <br>
+            <span>Horário: <span id="detalhe-horario"></span></span>
+        </div>
+        <div class="endereco">
+            <p>Endereço: <span id="detalhe-endereco"></span></p>
+        </div>
+        <div class="dialog-imagem">
+            <img src="https://conteudo.imguol.com.br/c/noticias/3b/2021/05/18/google-io-1621360834718_v2_900x506.png"
+                alt="" class="modal-localizacao">
+        </div>
+    </dialog>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        integrity="sha384-kenU1KFdBIe4zVF0sG1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    <script>
+        // Vetor estático com os agendamentos
+        const appointments = [
+            { paciente: 'Ana Paula', date: '10/12/2023 09:00' },
+            { paciente: 'Maria Eduarda', date: '07/01/2024 08:00' },
+            { paciente: 'João Pedro', date: '15/12/2023 15:00' }
+        ];
 
+        // Função para carregar os agendamentos na página
+        function loadAppointments() {
+            const container = document.getElementById('appointments-container');
+            container.innerHTML = '';  // Limpa os agendamentos existentes
 
+            appointments.forEach((appointment, index) => {
+                const card = document.createElement('div');
+                card.className = 'card my-3 rounded-4';
+                card.innerHTML = `
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-3 d-flex align-items-center ps-3">
+                                ${appointment.paciente}
+                            </div>
+                            <div class="col-12 col-md-3 d-flex align-items-center ps-3">
+                                ${appointment.date}
+                            </div>
+                            <div class="col-12 col-md-2 d-flex align-items-center">
+                                <button class="btn btn-outline-primary js-ver-detalhes" type="button" data-index="${index}">Ver detalhes</button>
+                            </div>
+                            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                                <button class="btn btn-outline-primary js-cancel" type="button" data-index="${index}">Cancelar Agendamentos</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Adiciona ouvintes de eventos aos botões de cancelar
+            document.querySelectorAll('.js-cancel').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    cancelAppointment(index);
+                });
+            });
+
+            // Adiciona ouvintes de eventos aos botões de ver detalhes
+            document.querySelectorAll('.js-ver-detalhes').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    showDetails(index);
+                });
+            });
+        }
+
+        // Função para cancelar um agendamento
+        function cancelAppointment(index) {
+            appointments.splice(index, 1);  // Remove o agendamento do vetor
+            loadAppointments();  // Recarrega a lista de agendamentos
+        }
+
+        // Função para mostrar detalhes do agendamento
+        function showDetails(index) {
+            const appointment = appointments[index];
+            document.getElementById('detalhe-paciente').innerText = appointment.paciente;
+            document.getElementById('detalhe-data').innerText = appointment.date.split(' ')[0];
+            document.getElementById('detalhe-horario').innerText = appointment.date.split(' ')[1];
+            document.getElementById('detalhe-endereco').innerText = 'Endereço exemplo'; // Substitua pelo endereço real se disponível
+            document.getElementById('modal_ver_detalhe').showModal();
+        }
+
+        // Fechar o modal de detalhes
+        document.querySelector('.js-fechar').addEventListener('click', () => {
+            document.getElementById('modal_ver_detalhe').close();
+        });
+
+        // Carrega os agendamentos quando a página é carregada
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAppointments();
+        });
+    </script>
 </body>
-
-
 
 </html>

@@ -8,10 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="componentes.css">
-
+    <link rel="stylesheet" href="agenda-de-pacientes.css">
     <link rel="stylesheet" href="icon/icofont.min.css">
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 
@@ -47,29 +45,22 @@
                                 <a class="nav-link" href="contato.html">Contato</a>
                             </li>
                         </ul>
-
                         <form class="d-flex" role="search">
-                            <a href="index.html" class="btn btn-outline-primary" type="submit">Sair</a>
+                            <button class="btn btn-outline-primary custom-width" type="button"
+                                onclick="location.href='login.html'">Entrar</button>
                         </form>
-
                     </div>
                 </div>
             </nav>
         </div>
-
     </header>
 
     <div>
         <img class="img-fluid alturaImagem" src="imagens/agenda-pac.jpg" alt="...">
     </div>
+
     <main class="container-lg px-5">
-
-        <!-- 
-            EDITE APENAS DENTRO DA TAG MAIN QUE É O CONTEUDO DA PÁGINA
-         -->
-
         <h3 class="fw-bolder my-3">Agendamento dos Pacientes</h3>
-
 
         <div class="row">
             <div class="col-12 col-md-3 my-3">
@@ -81,119 +72,40 @@
         </div>
 
         <div class="row d-none d-md-flex">
-            <div class="col fw-bold my-2 ps-4">
-                Serviços
-            </div>
-            <div class="col fw-bold my-2">
-                Data do Agendamento
-            </div>
-            <div class="col-6">
+            <div class="col fw-bold my-2 ps-4">Serviços</div>
+            <div class="col fw-bold my-2">Data do Agendamento</div>
+            <div class="col-6"></div>
+        </div>
 
-            </div>
-
-        </div>
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        Ana Paula
-                    </div>
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        10/12/2023 09:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card my-3 rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        Maria Eduarda
-                    </div>
-                    <div class="col-12 col-md-3  d-flex align-items-center ps-3">
-                        07/01/2024 08:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card my-3 rounded-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        João Pedro
-                    </div>
-                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">
-                        15/12/2023 15:00
-                    </div>
-                    <div class="col-12 col-md-2 d-flex align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Ver detalhes</button>
-                    </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-outline-primary" type="submit">Cancelar Agendamentos</button>
-                    </div>
-                </div>
-            </div>
+        <div id="agendamentosContainer">
+            <!-- Agendamentos serão renderizados aqui -->
         </div>
 
         <div class="row">
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
             <div class="col-8 my-4">
                 <button class="btn btn-outline-primary col-6" type="submit">Veja mais</button>
             </div>
-
         </div>
-
-
-
-
     </main>
 
-
     <footer class="bg-white">
-
         <div class="container-lg">
-
             <div class="row">
                 <div class="col my-4 ">
                     <img class="logo logo-header-texto mb-3" src="imagens/logo-tipograh.png" alt="">
-                    <p>
-                        Cuidando de você hoje e sempre!<br>
-                        Siga a gente:
-                    </p>
+                    <p>Cuidando de você hoje e sempre!<br>Siga a gente:</p>
                     <div class="fs-4">
                         <a class="text-gradient" href="#!"><i class="bi bi-whatsapp"></i></a>
                         <a class="text-gradient" href="#!"><i class="bi bi-instagram"></i></a>
                         <a class="text-gradient" href="#!"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-                <div class="col">
-
-                </div>
+                <div class="col"></div>
                 <div class="col row my-5">
                     <div>
-                        <p>
-                            Site seguro
-                            <i class="icofont-lock"></i>
-                        </p>
-
-                        <p>
-                            Formas de pagamento
-
-                        </p>
+                        <p>Site seguro <i class="icofont-lock"></i></p>
+                        <p>Formas de pagamento</p>
                         <div>
                             <i class="icofont-mastercard fs-1"></i>
                             <i class="icofont-visa-alt fs-1"></i>
@@ -201,20 +113,364 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <dialog id="modal_ver_detalhe" class="border-0 rounded">
+        <div class="fechar_modal ">
+            <button type="button" class="fechamento js-fechar"><i class="bi bi-x"></i></button>
+        </div>
+        <h1 class="h1-titulo">Detalhes Paciente</h1>
+        <div class="conteudo-modal d-flex">
+            <div class="conteudo-informacao me-4">
+                <div class="info margin-left-32px">
+                    <span id="detalhes-medico">Médico: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+                    <br><br>
+                    <span id="detalhes-servico">Serviço: xxxxxxxxxxxxxxxxxxx</span>
+                    <br><br>
+                    <span id="detalhes-data">Data: xx/xx/xxxx</span>
+                    <br><br>
+                    <label for="horario">Escolha um horário:</label>
+                    <select id="horario" name="horio" class="conteudo-horario">
+                        <option value="horario" selected="horario">Selecione</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    </select>
+                </div>
+            </div>
+            <div class="dias-da-semana">
+                <div class="calendario">
+                    <div class="card">
+                        <table class="agenda">
+                            <tr>
+                                <td class="fundo-roxo-500" colspan="7">
+                                    <id style="font-weight:bold">Calendário</id>
+                                </td>
+                            </tr>
+                            <td colspan="7">
+                                <id class="mes">Novembro 2023</id>
+                            </td>
+                            <tr>
+                                <td>Dom</td>
+                                <td>Seg</td>
+                                <td>Ter</td>
+                                <td>Qua</td>
+                                <td>Qui</td>
+                                <td>Sex</td>
+                                <td>Sáb</td>
+                            </tr>
+                            <tr>
+                                <td class="dias-passados">30</td>
+                                <td class="dias-passados">31</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="01">
+                                        <span>01</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="02">
+                                        <span>02</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="03">
+                                        <span>03</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="04">
+                                        <span>04</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="05">
+                                        <span>05</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="06">
+                                        <span>06</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="07">
+                                        <span>07</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="08">
+                                        <span>08</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="09">
+                                        <span>09</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="10">
+                                        <span>10</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="11">
+                                        <span>11</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="12">
+                                        <span>12</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="13">
+                                        <span>13</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="14">
+                                        <span>14</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="15">
+                                        <span>15</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="16">
+                                        <span>16</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="17">
+                                        <span>17</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="18">
+                                        <span>18</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="19">
+                                        <span>19</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="20">
+                                        <span>20</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="21">
+                                        <span>21</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="22">
+                                        <span>22</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="23">
+                                        <span>23</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="24">
+                                        <span>24</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="25">
+                                        <span>25</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="26">
+                                        <span>26</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="27">
+                                        <span>27</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="28">
+                                        <span>28</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="29">
+                                        <span>29</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="dia" value="30">
+                                        <span>30</span>
+                                    </label>
+                                </td>
+                                <td class="dias-passados">01</td>
+                                <td class="dias-passados">02</td>
+                                <td class="dias-passados">03</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="fechar js-fechar btn btn-outline-primary">Reagendar</button>
+        </div>
+    </dialog>
 
+    <dialog id="modal_cancelar" class="border-0 rounded">
+        <div class="dialog-header text-center mx-2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmthWgsZvjzFfow8sWiMKUyDQPwpgsVkIUztVH3MeGtN00R9KCUtIrt1Nt0wVd3XY17Qo&usqp=CAU"
+                alt="" class="imagem-cancelar img-fluid d-block mx-auto w-50">
+        </div>
+        <div class="dialog-body mb-3">Certeza que deseja cancelar?</div>
+        <div class="dialog-footer text-center">
+            <button type="button" class="btn btn-outline-primary fechar js-fechar">Não</button>
+            <button type="button" class="btn btn-outline-primary js-confirmar-cancelamento">Sim</button>
+        </div>
+    </dialog>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vetor estático de agendamentos
+            let agendamentos = [
+                { id: 1, nome: 'Ana Paula', data: '10/12/2023 09:00' },
+                { id: 2, nome: 'Maria Eduarda', data: '07/01/2024 08:00' },
+                { id: 3, nome: 'João Pedro', data: '15/12/2023 15:00' },
+            ];
+
+            // Renderizar os agendamentos na página
+            const renderAgendamentos = () => {
+                const agendamentosContainer = document.getElementById('agendamentosContainer');
+                agendamentosContainer.innerHTML = '';
+                agendamentos.forEach(agendamento => {
+                    agendamentosContainer.innerHTML += `
+                        <div class="card my-3 rounded-4" data-id="${agendamento.id}">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">${agendamento.nome}</div>
+                                    <div class="col-12 col-md-3 d-flex align-items-center ps-3">${agendamento.data}</div>
+                                    <div class="col-12 col-md-2 d-flex align-items-center">
+                                        <button class="btn btn-outline-primary js-ver-detalhes" type="button">Ver detalhes</button>
+                                    </div>
+                                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-outline-primary js-cancelar" type="button">Cancelar Agendamentos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Adicionar eventos aos botões de ver detalhes e cancelar
+                document.querySelectorAll('.js-ver-detalhes').forEach(button => {
+                    button.addEventListener('click', openDetailsModal);
+                });
+
+                document.querySelectorAll('.js-cancelar').forEach(button => {
+                    button.addEventListener('click', openCancelModal);
+                });
+            };
+
+            // Função para abrir o modal de ver detalhes
+            const openDetailsModal = (event) => {
+                const card = event.target.closest('.card');
+                const agendamentoId = card.getAttribute('data-id');
+                const agendamento = agendamentos.find(a => a.id == agendamentoId);
+
+                document.getElementById('detalhes-medico').innerText = `Médico: ${agendamento.nome}`;
+                document.getElementById('detalhes-servico').innerText = `Serviço: Serviço Exemplo`;
+                document.getElementById('detalhes-data').innerText = `Data: ${agendamento.data}`;
+
+                document.getElementById('modal_ver_detalhe').showModal();
+            };
+
+            // Função para abrir o modal de cancelamento
+            const openCancelModal = (event) => {
+                const card = event.target.closest('.card');
+                const agendamentoId = card.getAttribute('data-id');
+                const modalCancelar = document.getElementById('modal_cancelar');
+                modalCancelar.setAttribute('data-id', agendamentoId);
+                modalCancelar.showModal();
+            };
+
+            // Função para cancelar o agendamento
+            const cancelarAgendamento = () => {
+                const modalCancelar = document.getElementById('modal_cancelar');
+                const agendamentoId = modalCancelar.getAttribute('data-id');
+                agendamentos = agendamentos.filter(agendamento => agendamento.id != agendamentoId);
+                renderAgendamentos();
+                modalCancelar.close();
+            };
+
+            // Evento para o botão "Sim" do modal
+            document.querySelector('.js-confirmar-cancelamento').addEventListener('click', cancelarAgendamento);
+
+            // Evento para fechar os modais
+            document.querySelectorAll('.js-fechar').forEach(button => {
+                button.addEventListener('click', () => {
+                    button.closest('dialog').close();
+                });
+            });
+
+            // Renderizar agendamentos ao carregar a página
+            renderAgendamentos();
+        });
+    </script>
 </body>
-
-
 
 </html>

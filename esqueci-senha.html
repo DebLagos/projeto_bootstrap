@@ -10,20 +10,17 @@
     <link rel="stylesheet" href="componentes.css">
     <link rel="stylesheet" href="icon/icofont.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-
-
-
-
 </head>
 
 <body>
-    <a href="index.html" class="d-flex justify-content-center">
-        <img class="w-25 mt-4 mb-4" src="imagens/logo-tipograh.png" alt="Logo Medvida">
-    </a>
+
     <main class="container d-flex flex-column justify-content-center align-items-center h-100">
-        <div class="card w-50 p-4 border-0">
+        <div class="card w-50 p-4 border-0 mt-5">
             <div class="card-body text-center">
-                <form action="">
+                <form action="" class="">
+                    <a href="index.html" class="d-flex justify-content-center">
+                        <img class="w-25 mb-4" src="imagens/logo-tipograh.png" alt="Logo Medvida">
+                    </a>
                     <h4 class="text-start mb-4">Esqueci minha senha</h4>
                     <p class="text-start small">
                         Para redefinir sua senha, informe o e-mail cadastrado na sua conta e clique em
@@ -33,17 +30,16 @@
                     <!-- Email address input-->
                     <div class="form-floating mb-5">
                         <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                            data-sb-validations="required,email" data-sb-can-submit="no" onblur="validarEmailInput()">
+                            data-sb-validations="required,email" onblur="validarEmailInput()">
                         <div id="email-error" style="color: red;"></div>
                         <label for="email">Email</label>
 
-                        <div class="invalid-feedback" data-sb-feedback="email:required">É necessario um Email.</div>
+
                         <div class="invalid-feedback" data-sb-feedback="email:email">Esse Email não é valido.</div>
                     </div>
                     <div class="form-group mb-4">
                         <button type="button" class="btn btn-outline-primary w-50"
                             onclick="validarEmail()">Enviar</button>
-
                     </div>
                     <div class="form-group">
                         <a href="login.html" class="small text-decoration-none ">Voltar para o Login</a>
@@ -53,26 +49,58 @@
         </div>
     </main>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal_enviar" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpcZaw5yw5jJbfPzynyJ3SvprAZBB5vROhZqOY1E9ebf_6XAxu6K3FDSw9oSA26-oRSGo&usqp=CAU"
+                        alt="" class="imagem-sucesso mb-3" style="max-width: 100px;">
+                    <p>Email de verificação enviado! <br>
+                        Verifique sua caixa de entrada.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
 
-
     <script>
         function validarEmail() {
-
-            // verifica o e-mail
-            // validarEmailInput();
-            if (validarEmailInput() == false) {
-
-                return;
+            validarEmailInput();
+            // Se o email for válido, você pode adicionar a lógica para enviar o formulário
+            const emailInput = document.getElementById('email');
+            if (!emailInput.classList.contains('is-invalid')) {
+                const modal = new bootstrap.Modal(document.getElementById('modal_enviar'));
+                modal.show();
             }
-
         }
-        validarEmail();
+
+        function validarEmailInput() {
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailValue = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (!emailRegex.test(emailValue)) {
+                emailError.textContent = "Por favor, insira um email válido.";
+                emailInput.classList.add('is-invalid');
+                emailInput.classList.remove('is-valid');
+            } else {
+                emailError.textContent = "";
+                emailInput.classList.remove('is-invalid');
+                emailInput.classList.add('is-valid');
+            }
+        }
     </script>
 
-    <script src="validar-campos.js"></script>
+
 </body>
 
 </html>
