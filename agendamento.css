@@ -1,0 +1,203 @@
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+}
+
+.conteudo-de-agendamento {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+/* .conteudo-cartao {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #a4b0be;
+    background-color: #ffffff;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.cartao {
+    border: none !important;
+    padding: 3px !important;
+    outline: none;
+    width: 100%;
+} */
+
+/* .conteudo-vencimento select {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #949494;
+    width: 100px;
+} */
+
+.conteudo-horario {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #949494;
+    width: 200px;
+}
+
+.form-de-agendamento {
+    padding-right: 15rem;
+}
+
+.form-de-agendamento button {
+    width: 175px;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+.conteudo-agendar {
+
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.conteudo-calendario {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.card-calendario {
+    border-radius: 1.5rem;
+}
+
+.calendario tr,
+.calendario td {
+
+    /* border: 1px solid #C2C2C2; */
+    /* padding: 5px; */
+    text-align: center;
+}
+
+.titulo-calendario {
+    padding-block: 0.25rem;
+}
+
+.dias-passados {
+    color: #C9B0D8;
+}
+
+/* componentes para selecionar a caixa do dia*/
+.calendario label {
+    width: 100%;
+    display: flex;
+}
+
+/*então se o input estiver checado ele vai selecionar o span*/
+.calendario input:checked+span {
+    background-color: #C9B0D8;
+    font-weight: bold;
+}
+
+.calendario input+span {
+
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    transition: 0.25s;
+    border-radius: 0.5rem;
+}
+
+/*ocutar os radios do calendario*/
+.calendario input[type="radio"] {
+
+    display: none;
+}
+
+.calendario {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.calendario span:hover {
+    background-color: #C9B0D8;
+}
+
+.calendario tr:first-child td {
+    border-radius: 80px;
+}
+
+.conteudo-calendario .card {
+    padding: 13px;
+}
+
+.conteudo-mes {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 25px;
+
+}
+
+.conteudo-salvar-inform {
+    display: inline-flex;
+}
+
+dialog {
+    /* width: 15%;
+    height: 25%; */
+    padding: 40px;
+    border: none;
+    border-radius: 20px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: center;
+}
+
+.dialog-body {
+
+    font-weight: 400;
+}
+
+.dialog-footer {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+}
+
+.imagem-sucesso {
+    width: 60px;
+    height: 60px;
+    display: flex;
+
+}
+
+.agendamento-efetuado {
+    width: 80px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #A47BBE;
+    border: 1px solid #A47BBE;
+    color: #ffffff;
+
+}
+
+.agendamento-efetuado:hover {
+    background-color: #ffffff;
+    border: 1px solid #A47BBE;
+    color: #A47BBE;
+}
+
+.input-field input {
+    margin-bottom: 1rem;
+}
+
+.input-field input[type=time]:not(:focus)+label {
+    color: black;
+}

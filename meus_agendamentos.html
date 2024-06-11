@@ -59,7 +59,7 @@
     </header>
 
     <div>
-        <img class="img-fluid alturaImagem" src="imagens/agenda-pac.jpg" alt="...">
+        <img class="img-fluid alturaImagem" src="imagens/agendamento.jpg" alt="...">
     </div>
     <main class="container-lg px-5">
 
@@ -67,7 +67,7 @@
             EDITE APENAS DENTRO DA TAG MAIN QUE É O CONTEUDO DA PÁGINA
          -->
 
-        <h3 class="fw-bolder my-3">Agendamento dos Pacientes</h3>
+        <h3 class="fw-bolder my-3">Meus Agendamentos</h3>
 
 
         <div class="row">
@@ -81,7 +81,7 @@
 
         <div class="row d-none d-md-flex">
             <div class="col fw-bold my-2 ps-4">
-                Paciente
+                Serviços
             </div>
             <div class="col fw-bold my-2">
                 Data do Agendamento
@@ -144,7 +144,7 @@
             <button type="button" class="fechamento js-fechar"><i class="bi bi-x"></i></button>
         </div>
         <div class="texto-principal">
-            <span>Paciente: <span id="detalhe-paciente"></span></span>
+            <span>Serviço: <span id="detalhe-paciente"></span></span>
             <br>
             <span>Data: <span id="detalhe-data"></span></span>
             <br>
@@ -165,9 +165,9 @@
     <script>
         // Vetor estático com os agendamentos
         const appointments = [
-            { paciente: 'Ana Paula', date: '10/12/2023 09:00' },
-            { paciente: 'Maria Eduarda', date: '07/01/2024 08:00' },
-            { paciente: 'João Pedro', date: '15/12/2023 15:00' }
+            { paciente: 'Eletrocardiograma', date: '10/12/2023 09:00' },
+            { paciente: 'Cardiologista', date: '07/01/2024 08:00' },
+            { paciente: 'Dermatologista', date: '15/12/2023 15:00' }
         ];
 
         // Função para carregar os agendamentos na página
